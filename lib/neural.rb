@@ -19,12 +19,12 @@ module Neural
       @training = []
       @count = 0
 
-      2000.times do |n|
+      20.times do |n|
         x = rand @@xmin..@@xmax
         y = rand @@ymin..@@ymax
         answer = 1
         answer = -1 if y < f(x)
-        @training[n] = Trainer.new x, y, answer
+        @training[n] = Trainer.new inputs: [x, y], answer: answer
         @ptron.train @training[@count].inputs, @training[@count].answer
         puts @ptron
       end
