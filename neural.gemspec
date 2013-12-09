@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Neural::VERSION
   spec.authors       = ["Nigel Lowry"]
   spec.email         = ["nigel-lowry@ultra.eclipse.co.uk"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Small gem for neural networks}
+  spec.summary       = %q{Provides class for working with neural networks}
   spec.homepage      = ""
   spec.license       = "MIT"
 
