@@ -3,4 +3,4 @@
 require 'neural'
 
 driver = Neural::Driver.new
-driver.say_hi
+driver.setup
