@@ -3,13 +3,19 @@ require 'active_support/all'
 class Perceptron
 
   attr_reader :inputs
+  attr_reader :weights
 
-  def initialize inputs
-    @inputs = inputs
+  def initialize n
+    @weights = n.times.collect { random_weight }
   end
 
   def random_weight
     random_float_between_minus_one_and_one_inclusive
+  end
+
+  def feed_forward inputs
+    @inputs = inputs
+    output
   end
 
   def sum
