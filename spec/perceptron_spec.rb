@@ -2,7 +2,12 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 require 'perceptron'
 
 describe Perceptron do
-  it 'should do something' do
-    true.should == false
+
+  describe "#random_weight" do
+    it "should generate a random number between -1.0 and 1.0 inclusive" do
+      random_weight = subject.random_weight
+      random_weight.should be >= -1.0
+      random_weight.should be <= 1.0
+    end
   end
 end
