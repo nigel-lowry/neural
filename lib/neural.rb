@@ -5,28 +5,26 @@ require 'trainer'
 module Neural
   class Driver
 
-    @@xmin = -400
-    @@ymin = -100
-    @@xmax = 400
-    @@ymax = 100
-
     def f x
       0.4 * x + 1
     end
 
     def setup
-      @ptron = Perceptron.new 3
-      @training = []
-      @count = 0
+      ptron = Perceptron.new 3
 
-      20.times do |n|
-        x = rand @@xmin..@@xmax
-        y = rand @@ymin..@@ymax
-        answer = 1
-        answer = -1 if y < f(x)
-        @training[n] = Trainer.new inputs: [x, y], answer: answer
-        @ptron.train @training[@count].inputs, @training[@count].answer
-        puts @ptron
+      2000.times do |n|
+        x = rand -400..400
+        y = rand -400..400
+
+        answer = if y < f(x)
+                   -1
+                 else
+                   1
+                 end
+
+        t = Trainer.new inputs: [x, y], answer: answer
+        ptron.train t.inputs, t.answer
+        puts ptron
       end
     end
   end
