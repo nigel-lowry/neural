@@ -16,6 +16,10 @@ class Perceptron
     @inputs.collect {|input| input * random_weight }.sum
   end
 
+  def activate
+    sum > 0 ? 1 : -1
+  end
+
 private
 
   def random_float_between_minus_one_and_one_inclusive
