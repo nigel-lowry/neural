@@ -12,6 +12,24 @@ describe Trainer do
   its(:answer) { should == -1 }
 
   describe "#initialize" do
+    describe "inputs" do
+      it "can have 1 element" do
+        expect { Trainer.new inputs: [12], answer: 1 }.not_to raise_error
+      end
+
+      it "can have many elements" do
+        expect { Trainer.new inputs: [12, 4], answer: 1 }.not_to raise_error
+      end
+
+      it "cannot have no elements" do
+        expect { Trainer.new inputs: [], answer: 1 }.to raise_error
+      end
+
+      it "cannot be nil" do
+        expect { Trainer.new inputs: nil, answer: 1 }.to raise_error
+      end
+    end
+
     describe "answer" do
       it "can be 1" do
         expect { Trainer.new inputs: [12, 4], answer: 1 }.not_to raise_error
