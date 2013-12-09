@@ -3,10 +3,10 @@ require 'active_support/all'
 class Perceptron
 
   attr_reader :weights
-  @@LEARNING_CONSTANT = 0.01
 
-  def initialize n
+  def initialize n, learning_constant=0.01
     @weights = n.times.collect { random_weight }
+    @learning_constant = learning_constant
   end
 
   def train inputs, desired
@@ -14,7 +14,7 @@ class Perceptron
     error = desired - guess
 
     @weights.each_with_index do |item, index|
-      @weights[index] = item + @@LEARNING_CONSTANT * error * inputs[index]
+      @weights[index] = item + @learning_constant * error * inputs[index]
     end
   end
 
