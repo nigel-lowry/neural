@@ -1,5 +1,9 @@
 require "neural/version"
 
 module Neural
-  # Your code goes here...
+  class Driver
+    def say_hi
+      puts "hello"
+    end
+  end
 end

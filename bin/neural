@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'neural'
+
+driver = Neural::Driver.new
+driver.say_hi
