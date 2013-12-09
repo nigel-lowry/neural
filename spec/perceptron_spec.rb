@@ -90,4 +90,5 @@ describe Perceptron do
       end
     end
   end
+
 end
