@@ -13,8 +13,8 @@ class Perceptron
     guess = feed_forward inputs
     error = desired - guess
 
-    weights.each_with_index do |item, index|
-      weights[index] = item + @@LEARNING_CONSTANT * error * inputs[index]
+    @weights.each_with_index do |item, index|
+      @weights[index] = item + @@LEARNING_CONSTANT * error * inputs[index]
     end
   end
 
@@ -29,6 +29,10 @@ class Perceptron
 
   def sum
     @inputs.collect {|input| input * random_weight }.sum
+  end
+
+  def to_s
+    @weights.to_s
   end
 
 private
