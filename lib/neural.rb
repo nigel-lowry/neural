@@ -25,10 +25,9 @@ module Neural
         answer = 1
         answer = -1 if y < f(x)
         @training[n] = Trainer.new x, y, answer
+        @ptron.train @training[@count].inputs, @training[@count].answer
+        puts @ptron
       end
-
-      @ptron.train @training[@count].inputs, @training[@count].answer
-      puts @ptron
     end
   end
 end
