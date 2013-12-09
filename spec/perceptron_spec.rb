@@ -30,14 +30,6 @@ describe Perceptron do
     end
   end
 
-  describe "#random_weight" do
-    it "should generate a random number between -1.0 and 1.0 inclusive" do
-      random_weight = subject.random_weight
-      random_weight.should be >= -1.0
-      random_weight.should be <= 1.0
-    end
-  end
-
   describe "#sum" do
     it "multiplies each input by its weight then adds them together" do
       subject.feed_forward [12, 4]

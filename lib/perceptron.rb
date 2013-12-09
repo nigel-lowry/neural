@@ -9,10 +9,6 @@ class Perceptron
     @weights = n.times.collect { random_weight }
   end
 
-  def random_weight
-    random_float_between_minus_one_and_one_inclusive
-  end
-
   def feed_forward inputs
     @inputs = inputs
     output
@@ -43,6 +39,10 @@ class Perceptron
   end
 
 private
+
+  def random_weight
+    random_float_between_minus_one_and_one_inclusive
+  end
 
   def random_float_between_minus_one_and_one_inclusive
     rand -1.0..1.0
