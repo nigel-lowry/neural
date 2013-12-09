@@ -31,7 +31,7 @@ class Perceptron
     sum = 0
 
     @inputs.each_with_index do |item, index|
-      sum += item * @weights[index]
+      sum += item * weights[index]
     end
 
     sum

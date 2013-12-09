@@ -32,8 +32,8 @@ describe Perceptron do
 
   describe "#sum" do
     it "multiplies each input by its weight then adds them together" do
+      subject.stub(:weights).and_return([0.5, -1.0])
       subject.feed_forward [12, 4]
-      subject.stub(:random_weight).and_return(0.5, -1.0)
       subject.sum.should == 2
     end
   end
