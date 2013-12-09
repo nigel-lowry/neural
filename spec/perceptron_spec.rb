@@ -22,20 +22,20 @@ describe Perceptron do
     end
   end
 
-  describe "#activate" do
+  describe "#output" do
     it "is 1 if the sum is greater than 0" do
       subject.stub(:sum).and_return(0.1)
-      subject.activate.should == 1
+      subject.output.should == 1
     end
 
     it "is -1 if the sum is less than 0" do
       subject.stub(:sum).and_return(-0.1)
-      subject.activate.should == -1
+      subject.output.should == -1
     end
 
     it "is -1 if the sum is 0" do
       subject.stub(:sum).and_return(0.0)
-      subject.activate.should == -1
+      subject.output.should == -1
     end
   end
 end
