@@ -28,7 +28,13 @@ class Perceptron
   end
 
   def sum
-    @inputs.collect {|input| input * random_weight }.sum
+    sum = 0
+
+    @inputs.each_with_index do |item, index|
+      sum += item * @weights[index]
+    end
+
+    sum
   end
 
   def to_s
