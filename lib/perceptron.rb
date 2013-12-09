@@ -2,7 +2,6 @@ require 'active_support/all'
 
 class Perceptron
 
-  attr_reader :inputs
   attr_reader :weights
   @@LEARNING_CONSTANT = 0.01
 

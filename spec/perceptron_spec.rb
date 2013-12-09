@@ -5,8 +5,6 @@ describe Perceptron do
 
   subject { Perceptron.new 2 }
 
-  it { should respond_to(:inputs) }
-
   describe "#initialize" do
     context "2 inputs" do
       subject { Perceptron.new 2 }
