@@ -64,4 +64,30 @@ describe Perceptron do
       subject.output.should == -1
     end
   end
+
+  describe "#error" do
+    context "desired -1, guess -1" do
+      it "should be 0" do
+        subject.error(desired: -1, guess: -1).should == 0
+      end
+    end
+
+    context "desired -1, guess +1" do
+      it "should be -2" do
+        subject.error(desired: -1, guess: +1).should == -2
+      end
+    end
+
+    context "desired +1, guess -1" do
+      it "should be +2" do
+        subject.error(desired: +1, guess: -1).should == +2
+      end
+    end
+
+    context "desired +1, guess +1" do
+      it "should be 0" do
+        subject.error(desired: +1, guess: +1).should == 0
+      end
+    end
+  end
 end

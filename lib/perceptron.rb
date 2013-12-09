@@ -26,6 +26,10 @@ class Perceptron
     activate
   end
 
+  def error options={}
+    options[:desired] - options[:guess]
+  end
+
 private
 
   def random_float_between_minus_one_and_one_inclusive
