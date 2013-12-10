@@ -14,7 +14,7 @@ module Neural
         perceptron.train trainer.inputs, trainer.answer
       end
 
-      puts perceptron.weights[0] / perceptron.weights[1]
+      puts -perceptron.weights[0] / perceptron.weights[1]
       puts perceptron
     end
 
