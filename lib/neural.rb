@@ -12,7 +12,7 @@ module Neural
     def setup
       ptron = Perceptron.new 3
 
-      2000.times do |n|
+      2000.times do
         x = rand -400..400
         y = rand -400..400
 
