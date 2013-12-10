@@ -24,8 +24,10 @@ module Neural
 
         t = Trainer.new inputs: [x, y], answer: answer
         ptron.train t.inputs, t.answer
-        puts ptron
       end
+
+      puts ptron.weights[0] / ptron.weights[1]
+      puts ptron
     end
   end
 end
