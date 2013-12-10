@@ -5,17 +5,17 @@ require 'trainer'
 module Neural
   class Driver
     def setup
-      ptron = Perceptron.new 3
+      perceptron = Perceptron.new 3
 
       2_000.times do
         x = rand -400..400
         y = rand -400..400
         trainer = Trainer.new inputs: [x, y], answer: y < f(x) ? -1 : 1
-        ptron.train trainer.inputs, trainer.answer
+        perceptron.train trainer.inputs, trainer.answer
       end
 
-      puts ptron.weights[0] / ptron.weights[1]
-      puts ptron
+      puts perceptron.weights[0] / perceptron.weights[1]
+      puts perceptron
     end
 
     def f x
